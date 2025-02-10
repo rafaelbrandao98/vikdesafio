@@ -47,6 +47,7 @@ abstract class _RootStoreBase with Store {
     try {
       await storage.delete(key: 'firebase_token');
       await FirebaseAuth.instance.signOut();
+      await Modular.to.pushReplacementNamed("/login");
     } catch (e) {
       print("Erro ao deslogar $e");
     }

@@ -180,7 +180,11 @@ class EnterprisePageState extends State<EnterprisePage> {
                     future: store.getCompanies(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const Center(child: CircularProgressIndicator());
+                        return const Center(
+                          child: CircularProgressIndicator(
+                            color: appColorDeafut,
+                          ),
+                        );
                       }
 
                       if (snapshot.hasError) {
